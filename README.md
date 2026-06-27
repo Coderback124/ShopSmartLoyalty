@@ -1,34 +1,23 @@
 # ShopSmart Loyalty
 
-A C# console application that simulates a retail loyalty management system. The application allows customer registration, purchase tracking, reward point calculation, membership tier management, reporting using LINQ, and branch-to-head-office communication through TCP networking.
+A C# console application for managing a retail loyalty programme. The application supports customer registration, purchase tracking, reward point calculation, membership tier management, managerial reporting using LINQ, and branch-to-head-office communication through TCP networking.
 
 ---
 
 ## Features
 
-- Customer registration and management
-- Purchase history tracking
-- Reward points calculation
-- Automatic membership tier assignment
-- Customer validation and exception handling
-- Duplicate customer prevention
-- Customer search, update, and removal
-- Managerial reports using LINQ
+- Register and manage customers
+- Record customer purchases
+- Calculate reward points
+- Automatically determine membership tiers
+- Validate customer and purchase information
+- Prevent duplicate customer registrations
+- Search, update, and remove customer records
+- Generate managerial reports using LINQ
 - TCP server and client networking
-- Branch alert messaging
-- Alert filtering using LINQ
-
----
-
-## Technologies
-
-- C#
-- .NET 8
-- Visual Studio 2022
-- LINQ
-- TCP Networking (TcpListener & TcpClient)
-- Generic Collections
-- Object-Oriented Programming
+- Branch alert management
+- Filter alerts using LINQ
+- Console-based user interface
 
 ---
 
@@ -36,7 +25,7 @@ A C# console application that simulates a retail loyalty management system. The 
 
 The application generates reports including:
 
-- Top customers by spending
+- Top customers by total spending
 - Spending by province
 - Spending by branch
 - Customers grouped by membership tier
@@ -46,26 +35,68 @@ The application generates reports including:
 
 ## Networking
 
-The application includes a TCP server that receives branch alerts from multiple simulated clients. Alerts include:
+The networking component enables branch staff to send alerts to a central server.
+
+Each alert contains:
 
 - Branch Code
-- Staff Member
+- Staff Member Name
 - Alert Type
 - Message Content
 - Timestamp
 
-Alerts can be filtered and displayed using LINQ.
+Alerts are received, stored, displayed in timestamp order, and can be filtered using LINQ.
 
 ---
 
-## Future Improvements
+## Technologies
 
-- Persistent database storage using SQL Server
+**Language**
+
+- C#
+
+**Framework**
+
+- .NET 8
+
+**Development Environment**
+
+- Visual Studio 2022
+
+**Concepts**
+
+- Object-Oriented Programming
+- Generic Collections
+- LINQ
+- TCP Networking
+- Exception Handling
+
+---
+
+## Project Structure
+
+```text
+ShopSmartLoyalty
+│
+├── Program.cs
+├── Customer.cs
+├── Purchase.cs
+├── BranchAlert.cs
+├── ShopSmartSystem.cs
+├── AlertServer.cs
+└── AlertClient.cs
+```
+
+---
+
+## Planned Enhancements
+
+- SQL Server database integration
 - User authentication
-- Graphical user interface (WPF or WinForms)
+- Web dashboard
 - REST API integration
-- Real-time dashboard
-- Unit testing with xUnit
+- Mobile companion application
+- Automated unit testing
 
 ---
 
